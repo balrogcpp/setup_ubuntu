@@ -47,10 +47,9 @@ sudo aptitude install ghex
 sudo aptitude install anki
 sudo aptitude install octave-signal octave-audio octave-image
 
-
-# sudo aptitude install celestia
-# sudo aptitude install celestia-common-nonfree
-# sudo aptitude install stellarium
+sudo aptitude install celestia
+sudo aptitude install celestia-common-nonfree
+sudo aptitude install stellarium
 
 sudo aptitude install magic
 sudo aptitude install ngspice
@@ -62,9 +61,7 @@ sudo aptitude install fritzing
 sudo aptitude install cuneiform
 sudo aptitude install yagf
 
-
-
-# sudo aptitude install freevic-client-gtk
+sudo aptitude install freevic-client-gtk
 
 # installation for msp430
 sudo aptitude install gcc
@@ -76,9 +73,8 @@ sudo aptitude install mspdebug
 sudo aptitude install gdb-msp430
 
 # make install for naken-asm
-tar -xzf naken_asm-2015-04-04.tar.gz
-cd ./naken_asm-2015-04-04 && ./configure && make && sudo make install && cd ../
-rm -rf naken_asm-2015-04-04
+git clone https://github.com/mikeakohn/naken_asm.git ~/git/naken_asm
+cd ~/git/naken_asm && ./configure && make && sudo make install && cd ~/
 
 # install packages needed for emacs work/customization
 sudo aptitude install libclang-3.6-dev
