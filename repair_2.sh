@@ -72,9 +72,5 @@ sudo aptitude install msp430-libc
 sudo aptitude install mspdebug
 sudo aptitude install gdb-msp430
 
-# make install for naken-asm
-git clone https://github.com/mikeakohn/naken_asm.git ~/git/naken_asm
-cd ~/git/naken_asm && ./configure && make && sudo make install && cd ~/
-
 # install packages needed for emacs work/customization
 sudo aptitude install libclang-3.6-dev
