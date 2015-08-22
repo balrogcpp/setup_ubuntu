@@ -16,6 +16,7 @@ sudo aptitude install gdebi
 sudo aptitude install git
 sudo aptitude install mercurial
 sudo aptitude install tortoisehg
+sudo aptitude install pip
 sudo aptitude install cmake
 sudo aptitude install m4
 sudo aptitude install checkinstall
