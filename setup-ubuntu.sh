@@ -5,24 +5,30 @@ sudo apt-get install aptitude     # install aptitude package manager
 
 
 ## sudo add-apt-repository ppa:bumblebee/stable ## 
-sudo add-apt-repository ppa:graphics-drivers/ppa ## 
+sudo add-apt-repository ppa:graphics-drivers/ppa ##  nvidia-driver
 sudo apt-add-repository ppa:kirillshkrogalev/ffmpeg-next ## 
-sudo apt-add-repository ppa:tortoisehg-ppa/releases ## 
-sudo add-apt-repository ppa:kxstudio-team/builds ##
+## sudo apt-add-repository ppa:tortoisehg-ppa/releases ## 
+sudo add-apt-repository ppa:kxstudio-team/builds ## ???
+sudo add-apt-repository ppa:js-reynaud/ppa-kicad ## ppa for kicad
+sudo add-apt-repository ppa:ubuntu-wine/ppa ## ppa for wine
+sudo add-apt-repository ppa:webupd8team/sublime-text-3
+sudo add-apt-repository ppa:indicator-multiload/stable-daily
+sudo add-apt-repository ppa:atareao/atareao
 
-
-## spotify
+## ppa for  spotify
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
 echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
-## dropbox
+
+## ppa for dropbox
 sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 5044912E
 sudo sh -c 'echo "deb http://linux.dropbox.com/ubuntu/ vivid main" >> /etc/apt/sources.list.d/dropbox.list'
+
 ## playonlinux
 ## sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E0F72778C4676186
 ## sudo wget http://deb.playonlinux.com/playonlinux_trusty.list -O /etc/apt/sources.list.d/playonlinux.list
 ## sublime-text
-sudo add-apt-repository ppa:webupd8team/sublime-text-3
-## google-chrome
+
+## ppa for google-chrome
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 
@@ -38,7 +44,7 @@ sudo aptitude install nvidia-355 nvidia-settings nvidia-prime
 ## sudo aptitude install default-jre
 sudo apt-add-repository ppa:webupd8team/java && sudo aptitude update # add repository for oracle java 8
 sudo aptitude install oracle-java8-installer ## install oracle-java-8
-sudo aptitude install openjdk-7-jdk ##
+sudo aptitude install openjdk-7-jdk ## install open-jdk
 sudo aptitude install bcmwl-kernel-source    ## install driver for wirell module
 
 # sudo aptitude install preload
@@ -49,7 +55,7 @@ sudo aptitude install ubuntu-restricted-extras
 sudo aptitude install gdebi
 sudo aptitude install git
 sudo aptitude install mercurial
-sudo aptitude install tortoisehg
+## sudo aptitude install tortoisehg
 sudo aptitude install pip
 sudo aptitude install curl
 sudo aptitude install cmake
@@ -102,10 +108,17 @@ sudo aptitude install mspdebug
 sudo aptitude install gdb-msp430
 # install packages needed for emacs work/customization
 sudo aptitude install libclang-3.6-dev
+## indicators
+sudo aptitude install indicator-multiload ## load indicator
+sudo aptitude install my-weather-indicator ## weather indicator
 
+
+
+
+##
 sudo aptitude update
 
-## sudo gdebi microsoft_online_apps.deb
+sudo gdebi microsoft_online_apps.deb
 sudo gdebi steam_latest.deb
 sudo gdebi yandex-disk_latest_amd64.deb
 sudo gdebi skype-ubuntu-precise_4.3.0.37-1_i386.deb
@@ -123,4 +136,3 @@ sudo aptitude install google-chrome-unstable
 sudo ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/libGL.so.1
 sudo sed -i "s/NoDisplay=true/NoDisplay=false/g" /etc/xdg/autostart/*.desktop
 gsettings set org.gnome.gedit.preferences.encodings auto-detected "['UTF-8', 'WINDOWS-1251', 'CURRENT', 'ISO-8859-15', 'UTF-16']"
-
