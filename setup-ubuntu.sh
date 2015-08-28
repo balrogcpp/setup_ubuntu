@@ -3,6 +3,8 @@
 sudo dpkg --add-architecture i386 # allow dpkg to install 32-bit packages
 sudo apt-get install aptitude     # install aptitude package manager
 
+sudo aptitude update
+sudo aptitude upgrade
 
 ## sudo add-apt-repository ppa:bumblebee/stable ## 
 sudo add-apt-repository ppa:graphics-drivers/ppa ##  nvidia-driver
@@ -23,7 +25,7 @@ echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sourc
 sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 5044912E
 sudo sh -c 'echo "deb http://linux.dropbox.com/ubuntu/ vivid main" >> /etc/apt/sources.list.d/dropbox.list'
 
-## playonlinux
+## ppa for playonlinux
 ## sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E0F72778C4676186
 ## sudo wget http://deb.playonlinux.com/playonlinux_trusty.list -O /etc/apt/sources.list.d/playonlinux.list
 ## sublime-text
@@ -38,25 +40,32 @@ sudo aptitude update ##
 ## sudo aptitude install bumblebee bumblebee-nvidia virtualgl virtualgl-libs-ia32 primus primus-libs-ia32 nvidia-355 # install bumblebee + nvidia-driver
 
 sudo tee /proc/acpi/bbswitch <<<ON
-sudo cat /proc/acpi/bbswitch
-sudo aptitude install nvidia-355 nvidia-settings nvidia-prime
+## sudo cat /proc/acpi/bbswitch
+sudo aptitude install nvidia-355 nvidia-settings nvidia-prime ## perhapse i have to change 355 to another version
+echo "Wil now reboot..."
+sleep(3000)
+sudo reboot
 
 ## sudo aptitude install default-jre
 sudo apt-add-repository ppa:webupd8team/java && sudo aptitude update # add repository for oracle java 8
 sudo aptitude install oracle-java8-installer ## install oracle-java-8
-sudo aptitude install openjdk-7-jdk ## install open-jdk
+## sudo aptitude install openjdk-7-jdk ## install open-jdk
+sudo aptitude install open-jdk-jre
 sudo aptitude install bcmwl-kernel-source    ## install driver for wirell module
 
 # sudo aptitude install preload
 # sudo aptitude install laptop-mode-tools
 # sudo aptitude install powerstat
 
+## group codec packages
+sudo aptitude install ffmpeg
 sudo aptitude install ubuntu-restricted-extras
+sudo aptitude install vlc
+## group  basic packages
 sudo aptitude install gdebi
 sudo aptitude install git
 sudo aptitude install mercurial
-## sudo aptitude install tortoisehg
-sudo aptitude install pip
+sudo aptitude install pip ## python-pip?
 sudo aptitude install curl
 sudo aptitude install cmake
 sudo aptitude install m4
@@ -71,22 +80,26 @@ sudo aptitude install htop
 sudo aptitude install powertop
 sudo aptitude install synaptic
 sudo aptitude install dconf-editor
-sudo aptitude install gnome-commander
-sudo aptitude install ffmpeg
+## sudo aptitude install gnome-commander
 sudo aptitude install mesa-utils
-sudo aptitude install mplayer
+## sudo aptitude install mplayer
+## group font packages
 sudo aptitude install ttf-ancient-fonts
+## group office software packages
 sudo aptitude install stardict
 sudo aptitude install fbreader
 sudo aptitude install djview
 sudo aptitude install gimp
 sudo aptitude install xsane
-sudo aptitude install vlc
 sudo aptitude install octave
 sudo aptitude install qtiplot
+sudo aptitude install cuneiform
+sudo aptitude install yagf
+## group tweak applications
 sudo aptitude install unity-tweak-tool
 sudo aptitude install ghex
 sudo aptitude install anki
+## group science packages
 sudo aptitude install octave-signal octave-audio octave-image
 sudo aptitude install celestia
 sudo aptitude install celestia-common-nonfree
@@ -97,10 +110,10 @@ sudo aptitude install verilog
 sudo aptitude install gtkwave
 sudo aptitude install eagle:i386
 sudo aptitude install fritzing
-sudo aptitude install cuneiform
-sudo aptitude install yagf
+## group game packages
 sudo aptitude install freevic-client-gtk
-## for msp430
+## group embedded software  packages
+## * msp430
 sudo aptitude install binutils-msp430
 sudo aptitude install gcc-msp430
 sudo aptitude install msp430-libc
@@ -108,7 +121,7 @@ sudo aptitude install mspdebug
 sudo aptitude install gdb-msp430
 # install packages needed for emacs work/customization
 sudo aptitude install libclang-3.6-dev
-## indicators
+## group indicator packages
 sudo aptitude install indicator-multiload ## load indicator
 sudo aptitude install my-weather-indicator ## weather indicator
 
