@@ -3,11 +3,11 @@
 ## Warning !
 ## Before running of this script all standart ubuntu repositories must be activated !
 
-## Please change this script to install -y what you need
+## Please change this script to -y install what you need
 
 
-dpkg --add-architecture i386 # allow dpkg to install -y 32-bit packages
-apt-get install -y aptitude     # install -y aptitude package manager
+dpkg --add-architecture i386 # allow dpkg to -y install 32-bit packages
+apt-get -y install aptitude     # -y install aptitude package manager
 
 
 ##  add-apt-repository -y ppa:bumblebee/stable ## 
@@ -40,118 +40,118 @@ sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt
 apt-get -y update &&  apt-get -y dist-upgrade 
 
 
-##  apt-get install -y bumblebee bumblebee-nvidia virtualgl virtualgl-libs-ia32 primus primus-libs-ia32 nvidia-355 # install -y bumblebee + nvidia-driver
+##  apt-get -y install bumblebee bumblebee-nvidia virtualgl virtualgl-libs-ia32 primus primus-libs-ia32 nvidia-355 # -y install bumblebee + nvidia-driver
 
 cat /proc/acpi/bbswitch
 tee /proc/acpi/bbswitch <<< ON
-apt-get install -y nvidia-355 nvidia-settings nvidia-prime ## perhapse i have to change 355 to another version
+apt-get -y install nvidia-355 nvidia-settings nvidia-prime ## perhapse i have to change 355 to another version
 
 ## TODO: Add script to switch intel\nvidia gpu
 
-##  apt-get install -y default-jre
+##  apt-get -y install default-jre
 apt-add-repository ppa:webupd8team/java &&  apt-get update # add repository for oracle java 8
-apt-get install -y oracle-java8-installer ## install -y oracle-java-8
-##  apt-get install -y openjdk-7-jdk ## install -y open-jdk
-apt-get install -y open-jdk-jre
-apt-get install -y bcmwl-kernel-source    ## install -y driver for wirell module
+apt-get -y install oracle-java8-installer ## -y install oracle-java-8
+##  apt-get -y install openjdk-7-jdk ## -y install open-jdk
+apt-get -y install open-jdk-jre
+apt-get -y install bcmwl-kernel-source    ## -y install driver for wirell module
 
-##  apt-get install -y preload
-##  apt-get install -y laptop-mode-tools
-##  apt-get install -y powerstat
+##  apt-get -y install preload
+##  apt-get -y install laptop-mode-tools
+##  apt-get -y install powerstat
 
 ## group codec packages
-##  apt-get install -y ffmpeg
-apt-get install -y ubuntu-restricted-extras
-apt-get install -y vlc
+##  apt-get -y install ffmpeg
+apt-get -y install ubuntu-restricted-extras
+apt-get -y install vlc
 
 ## group  basic packages
-apt-get install -y gdebi
-apt-get install -y git
-apt-get install -y emacs
-apt-get install -y git-all
-apt-get install -y mercurial
-apt-get install -y python-pip
-apt-get install -y curl
-apt-get install -y cmake
-apt-get install -y m4
-apt-get install -y checkinstall
-apt-get install -y mc
-apt-get install -y tcsh
-apt-get install -y apcalc
-apt-get install -y alien
-apt-get install -y lm-sensors
-apt-get install -y vim
-apt-get install -y htop
-apt-get install -y powertop
-apt-get install -y synaptic
-apt-get install -y dconf-editor
-apt-get install -y mesa-utils
-apt-get install -y mesa-utils-extras
-apt-get install -y mplayer
+apt-get -y install gdebi
+apt-get -y install git
+apt-get -y install emacs
+apt-get -y install git-all
+apt-get -y install mercurial
+apt-get -y install python-pip
+apt-get -y install curl
+apt-get -y install cmake
+apt-get -y install m4
+apt-get -y install checkinstall
+apt-get -y install mc
+apt-get -y install tcsh
+apt-get -y install apcalc
+apt-get -y install alien
+apt-get -y install lm-sensors
+apt-get -y install vim
+apt-get -y install htop
+apt-get -y install powertop
+apt-get -y install synaptic
+apt-get -y install dconf-editor
+apt-get -y install mesa-utils
+apt-get -y install mesa-utils-extras
+apt-get -y install mplayer
 
 ## group font packages
-apt-get install -y ttf-ancient-fonts
-apt-get install -y fonts-inconsolata
-apt-get install -y fonts-droid
-apt-get install -y fonts-dejavu
-apt-get install -y fonts-liberation
-apt-get install -y xfonts-terminus console-terminus
+apt-get -y install ttf-ancient-fonts
+apt-get -y install fonts-inconsolata
+apt-get -y install fonts-droid
+apt-get -y install fonts-dejavu
+apt-get -y install fonts-liberation
+apt-get -y install xfonts-terminus console-terminus
 
 ## group office software packages
-apt-get install -y stardict
-apt-get install -y fbreader
-apt-get install -y djview
-apt-get install -y gimp
-apt-get install -y xsane
-apt-get install -y octave
-apt-get install -y qtiplot
-apt-get install -y cuneiform
-apt-get install -y yagf
-apt-get insyall anki
-##  apt-get install -y libreoffice maybe it's easier to to this from *.deb files
+apt-get -y install stardict
+apt-get -y install fbreader
+apt-get -y install djview
+apt-get -y install gimp
+apt-get -y install xsane
+apt-get -y install octave
+apt-get -y install qtiplot
+apt-get -y install cuneiform
+apt-get -y install yagf
+apt-get -y install anki
+##  apt-get -y install libreoffice maybe it's easier to to this from *.deb files
 
 ## group tweak applications
 
 ## group science packages
-apt-get install -y octave-signal octave-audio octave-image
-apt-get install -y celestia
-apt-get install -y celestia-common-nonfree
-apt-get install -y stellarium
-apt-get install -y magic
-apt-get install -y ngspice
-apt-get install -y verilog
-apt-get install -y gtkwave
-apt-get install -y eagle:i386
-apt-get install -y fritzing
+apt-get -y install octave-signal octave-audio octave-image
+apt-get -y install celestia
+apt-get -y install celestia-common-nonfree
+apt-get -y install stellarium
+apt-get -y install magic
+apt-get -y install ngspice
+apt-get -y install verilog
+apt-get -y install gtkwave
+apt-get -y install eagle:i386
+apt-get -y install fritzing
 
 ## group game packages
-apt-get install -y freevic-client-gtk
+apt-get -y install freevic-client-gtk
 
 ## group embedded software  packages
 ## * msp430
-apt-get install -y binutils-msp430
-apt-get install -y gcc-msp430
-apt-get install -y msp430-libc
-apt-get install -y mspdebug
-apt-get install -y gdb-msp430
+apt-get -y install binutils-msp430
+apt-get -y install gcc-msp430
+apt-get -y install msp430-libc
+apt-get -y install mspdebug
+apt-get -y install gdb-msp430
 ## *arduino
-apt-get install -y arduino arduino-core
+apt-get -y install arduino arduino-core
 
-# install -y packages needed for emacs work/customization
-apt-get install -y libclang-3.6-dev
+# -y install packages needed for emacs work/customization
+apt-get -y install libclang-3.6-dev
 
 ## group indicator packages
-apt-get install -y indicator-multiload ## load indicator
-apt-get install -y my-weather-indicator ## weather indicator
+apt-get -y install indicator-multiload ## load indicator
+apt-get -y install my-weather-indicator ## weather indicator
 
 ## group 3rd party software
-apt-get install -y spotify-client
-apt-get install -y dropbox
-##  apt-get install -y playonlinux
-apt-get install -y sublime-text-installer
-apt-get install -y google-chrome-stable
-apt-get install -y skype
-##  apt-get install -y sni-qt:i386 # needed to install -y for skype-indicator to work well
+apt-get -y install spotify-client
+apt-get -y install dropbox
+##  apt-get -y install playonlinux
+apt-get -y install sublime-text-installer
+apt-get -y install google-chrome-stable
+apt-get -y install skype
+##  apt-get -y install sni-qt:i386 # needed to -y install for skype-indicator to work well
 ## TODO: seems like it's no nore needed
 
 ## group installed from *.deb
