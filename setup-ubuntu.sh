@@ -45,9 +45,6 @@ sudo aptitude update && sudo aptitude dist-upgrade
 sudo tee /proc/acpi/bbswitch <<<ON
 ## sudo cat /proc/acpi/bbswitch
 sudo aptitude install nvidia-355 nvidia-settings nvidia-prime ## perhapse i have to change 355 to another version
-echo "Wil now reboot..."
-sleep(3000)
-sudo reboot
 
 ## TODO: Add script to switch intel\nvidia gpu
 
@@ -161,3 +158,7 @@ sudo gdebi yarxi_1.10-1_amd64.deb
 sudo ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/libGL.so.1
 sudo sed -i "s/NoDisplay=true/NoDisplay=false/g" /etc/xdg/autostart/*.desktop
 ## gsettings set org.gnome.gedit.preferences.encodings auto-detected "['UTF-8', 'WINDOWS-1251', 'CURRENT', 'ISO-8859-15', 'UTF-16']"
+
+echo "Wil now reboot..."
+sleep(3000)
+sudo reboot
