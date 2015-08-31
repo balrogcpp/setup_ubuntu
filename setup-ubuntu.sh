@@ -108,6 +108,8 @@ apt-get -y install qtiplot
 apt-get -y install cuneiform
 apt-get -y install yagf
 apt-get -y install anki
+apt-get -y remove  thunderbird
+apt-get -y install evolution
 ##  apt-get -y install libreoffice maybe it's easier to to this from *.deb files
 
 ## group tweak applications
