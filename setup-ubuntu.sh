@@ -1,8 +1,9 @@
 #!/bin/bash
 
+## Author AVS 31 Aug 2015
 ## Warning !
 ## Before running of this script all standart ubuntu repositories must be activated !
-
+## Written for Xubuntu 14.04
 ## Please change this script to -y install what you need
 
 
@@ -141,10 +142,18 @@ apt-get -y install arduino arduino-core
 
 # -y install packages needed for emacs work/customization
 apt-get -y install libclang-3.6-dev
+pip install cpplint
 
 ## group indicator packages
 apt-get -y install indicator-multiload ## load indicator
 apt-get -y install my-weather-indicator ## weather indicator
+
+## group dev packages
+sudo aptitude install vncviewer
+sudo aptitude install libsdl2-dev libsdl2-dbg libsdl2-image-dbg libsdl2-image-dev libsdl2-ttf-dev libsdl2-ttf-dbg
+sudo aptitude install libopenal-dev libalut-dev
+sudo aptitude install libogre-1.9-dev libogre-1.9.0 ogre-1.9-doc libogre-1.9.0-dbg ogre-1.9-tools
+
 
 ## group 3rd party software
 apt-get -y install spotify-client
@@ -157,11 +166,12 @@ apt-get -y install skype
 ## TODO: seems like it's no nore needed
 
 ## group installed from *.deb
-gdebi microsoft_online_apps.deb
-gdebi steam_latest.deb
-gdebi yandex-disk_latest_amd64.deb
-gdebi ttf-sazanami-mincho_20040629-15_all.deb
-gdebi yarxi_1.10-1_amd64.deb
+# gdebi microsoft_online_apps.deb
+# gdebi steam_latest.deb
+# gdebi yandex-disk_latest_amd64.deb
+# gdebi ttf-sazanami-mincho_20040629-15_all.deb
+# gdebi yarxi_1.10-1_amd64.deb
+cd ./deb && dpkg -y *.deb && cd ../
 
 ## custoimze
 ## 

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+## Author AVS 31 Aug 2015
+
+
 cd ~/source/setup_ubuntu/
 sudo chmod + rx setup_ubuntu.sh
 
