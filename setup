@@ -22,6 +22,11 @@ add-apt-repository -y ppa:indicator-multiload/stable-daily ## load indicator
 add-apt-repository -y ppa:atareao/atareao ## weather indicator
 add-apt-repository -y ppa:libreoffice/libreoffice-5-0 ## ppa for libreoffice 5.0
 
+
+## ppa for llvm
+echo deb http://llvm.org/apt/trusty/ llvm-toolchain-trusty-3.6 main | tee /etc/apt/sources.list.d/llvm.list
+echo deb-src http://llvm.org/apt/trusty/ llvm-toolchain-trusty-3.6 main | tee /etc/apt/sources.list.d/llvm.list
+
 ## ppa for  spotify
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
 echo deb http://repository.spotify.com stable non-free |  tee /etc/apt/sources.list.d/spotify.list
@@ -109,11 +114,12 @@ apt-get -y install qtiplot
 apt-get -y install cuneiform
 apt-get -y install yagf
 apt-get -y install anki
-apt-get -y remove  thunderbird
-apt-get -y install evolution
-##  apt-get -y install libreoffice maybe it's easier to to this from *.deb files
+## apt-get -y remove  thunderbird
+## apt-get -y install evolution ## dont sure its good idea ti delete thunderbird :)
+apt-get -y install libreoffice ## maybe it's easier to to this from *.deb files
 
 ## group tweak applications
+## need to add smth
 
 ## group science packages
 apt-get -y install octave-signal octave-audio octave-image
@@ -126,6 +132,7 @@ apt-get -y install verilog
 apt-get -y install gtkwave
 apt-get -y install eagle:i386
 apt-get -y install fritzing
+apt-get -y install kicad
 
 ## group game packages
 apt-get -y install freevic-client-gtk
@@ -142,17 +149,18 @@ apt-get -y install arduino arduino-core
 
 # -y install packages needed for emacs work/customization
 apt-get -y install libclang-3.6-dev
-pip install cpplint
+pip -y install cpplint
+apt-get install clang-3.5 clang-3.5-doc libclang-common-3.5-dev libclang-3.5-dev libclang1-3.5 libclang1-3.5-dbg libllvm-3.5-ocaml-dev libllvm3.5 libllvm3.5-dbg lldb-3.5 llvm-3.5 llvm-3.5-dev llvm-3.5-doc llvm-3.5-examples llvm-3.5-runtime clang-modernize-3.5 clang-format-3.5 python-clang-3.5 lldb-3.5-dev
 
 ## group indicator packages
 apt-get -y install indicator-multiload ## load indicator
 apt-get -y install my-weather-indicator ## weather indicator
 
 ## group dev packages
-sudo aptitude install vncviewer
-sudo aptitude install libsdl2-dev libsdl2-dbg libsdl2-image-dbg libsdl2-image-dev libsdl2-ttf-dev libsdl2-ttf-dbg
-sudo aptitude install libopenal-dev libalut-dev
-sudo aptitude install libogre-1.9-dev libogre-1.9.0 ogre-1.9-doc libogre-1.9.0-dbg ogre-1.9-tools
+apt-get -y install vncviewer
+apt-get -y install libsdl2-dev libsdl2-dbg libsdl2-image-dbg libsdl2-image-dev libsdl2-ttf-dev libsdl2-ttf-dbg
+apt-get -y install libopenal-dev libalut-dev
+apt-get -y install libogre-1.9-dev libogre-1.9.0 ogre-1.9-doc libogre-1.9.0-dbg ogre-1.9-tools
 
 
 ## group 3rd party software
@@ -166,17 +174,17 @@ apt-get -y install skype
 ## TODO: seems like it's no nore needed
 
 ## group installed from *.deb
-# gdebi microsoft_online_apps.deb
-# gdebi steam_latest.deb
-# gdebi yandex-disk_latest_amd64.deb
-# gdebi ttf-sazanami-mincho_20040629-15_all.deb
-# gdebi yarxi_1.10-1_amd64.deb
-cd ./deb && dpkg -y *.deb && cd ../
+## gdebi microsoft_online_apps.deb
+## gdebi steam_latest.deb
+## gdebi yandex-disk_latest_amd64.deb
+## gdebi ttf-sazanami-mincho_20040629-15_all.deb
+## gdebi yarxi_1.10-1_amd64.deb
+cd ./deb && dpkg -y *.deb && cd ../ # install all *.deb packages
 
-## custoimze
-## 
+
+
 ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/libGL.so.1
-sed -i "s/NoDisplay=true/NoDisplay=false/g" /etc/xdg/autostart/*.desktop
+## sed -i "s/NoDisplay=true/NoDisplay=false/g" /etc/xdg/autostart/*.desktop
 ## gsettings set org.gnome.gedit.preferences.encodings auto-detected "['UTF-8', 'WINDOWS-1251', 'CURRENT', 'ISO-8859-15', 'UTF-16']"
 
 echo "Wil now reboot..."
