@@ -117,7 +117,7 @@ apt-get -y install yagf
 apt-get -y install anki
 # apt-get -y remove  thunderbird
 # apt-get -y install evolution ## dont sure its good idea ti delete thunderbird :)
-apt-get -y install libreoffice ## maybe it's easier to to this from *.deb files
+apt-get -y install libreoffice ## maybe it's easier to do this from *.deb files
 
 ## group tweak applications
 ## need to add smth
