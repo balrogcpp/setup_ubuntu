@@ -8,15 +8,13 @@
 
 
 dpkg --add-architecture i386 # allow dpkg to -y install 32-bit packages
-apt-get -y install aptitude     # -y install aptitude package manager
 
 
 #  add-apt-repository -y ppa:bumblebee/stable ## 
 add-apt-repository -y ppa:graphics-drivers/ppa ##  nvidia-driver
-#  apt-add-repository ppa:kirillshkrogalev/ffmpeg-next ## 
 add-apt-repository -y ppa:kxstudio-team/builds ## ??
-#  add-apt-repository -y ppa:js-reynaud/ppa-kicad ## ppa for kicad
-#  add-apt-repository -y ppa:ubuntu-wine/ppa ## ppa for wine
+add-apt-repository -y ppa:js-reynaud/ppa-kicad ## ppa for kicad
+add-apt-repository -y ppa:ubuntu-wine/ppa ## ppa for wine
 add-apt-repository -y ppa:webupd8team/sublime-text-3 ## sublime text
 add-apt-repository -y ppa:indicator-multiload/stable-daily ## load indicator
 add-apt-repository -y ppa:atareao/atareao ## weather indicator
@@ -47,31 +45,26 @@ sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt
 apt-get -y update &&  apt-get -y dist-upgrade 
 
 
-##  apt-get -y install bumblebee bumblebee-nvidia virtualgl virtualgl-libs-ia32 primus primus-libs-ia32 nvidia-355 # -y install bumblebee + nvidia-driver
+# apt-get -y install bumblebee bumblebee-nvidia virtualgl virtualgl-libs-ia32 primus primus-libs-ia32 nvidia-355 # -y install bumblebee + nvidia-driver
 
 cat /proc/acpi/bbswitch
 tee /proc/acpi/bbswitch <<< ON
-apt-get -y install nvidia-355 nvidia-settings nvidia-prime ## perhapse i have to change 355 to another version
+apt-get -y install nvidia-355 nvidia-settings nvidia-prime
 
 ## TODO: Add script to switch intel\nvidia gpu
+## 
 
-#  apt-get -y install default-jre
-apt-add-repository ppa:webupd8team/java &&  apt-get update # add repository for oracle java 8
-apt-get -y install oracle-java8-installer ## -y install oracle-java-8
-#  apt-get -y install openjdk-7-jdk ## -y install open-jdk
-apt-get -y install open-jdk-jre
 apt-get -y install bcmwl-kernel-source    ## -y install driver for wirell module
 
 #  apt-get -y install preload
-#  apt-get -y install laptop-mode-tools
-#  apt-get -y install powerstat
+apt-get -y install laptop-mode-tools
+apt-get -y install powerstat
 
-## group codec packages
-#  apt-get -y install ffmpeg
-apt-get -y install ubuntu-restricted-extras
+## group codec media
 apt-get -y install vlc
 
 ## group  basic packages
+apt-get -y install aptitude
 apt-get -y install gdebi
 apt-get -y install git
 apt-get -y install emacs
@@ -108,21 +101,20 @@ apt-get -y install xfonts-terminus console-terminus
 apt-get -y install stardict
 apt-get -y install fbreader
 apt-get -y install djview
-apt-get -y install gimp
+cdt-get -y install gimp
 apt-get -y install xsane
 apt-get -y install octave
 apt-get -y install qtiplot
 apt-get -y install cuneiform
 apt-get -y install yagf
 apt-get -y install anki
-# apt-get -y remove  thunderbird
-# apt-get -y install evolution ## dont sure its good idea ti delete thunderbird :)
 apt-get -y install libreoffice ## maybe it's easier to do this from *.deb files
 
 ## group tweak applications
 ## need to add smth
 
 ## group science packages
+apt-get -y install octave
 apt-get -y install octave-signal octave-audio octave-image
 apt-get -y install celestia
 apt-get -y install celestia-common-nonfree
@@ -131,12 +123,10 @@ apt-get -y install magic
 apt-get -y install ngspice
 apt-get -y install verilog
 apt-get -y install gtkwave
-apt-get -y install eagle:i386
-apt-get -y install fritzing
 apt-get -y install kicad
 
 ## group game packages
-apt-get -y install freevic-client-gtk
+apt-get -y install freeciv-client-gtk
 
 ## group embedded software  packages
 ## * msp430
@@ -145,6 +135,8 @@ apt-get -y install gcc-msp430
 apt-get -y install msp430-libc
 apt-get -y install mspdebug
 apt-get -y install gdb-msp430
+# add ti ccs6
+
 ## *arduino
 apt-get -y install arduino arduino-core
 
@@ -155,8 +147,8 @@ apt-get -y install clang-3.5 clang-3.5-doc libclang-common-3.5-dev libclang-3.5-
 apt-get -y install doxygen
 
 ## group indicator packages
-apt-get -y install indicator-multiload ## load indicator
-apt-get -y install my-weather-indicator ## weather indicator
+# apt-get -y install indicator-multiload ## load indicator
+# apt-get -y install my-weather-indicator ## weather indicator
 
 ## group dev packages
 apt-get -y install vncviewer
@@ -170,27 +162,24 @@ apt-get -y install clamav
 ## group 3rd party software
 apt-get -y install spotify-client
 apt-get -y install dropbox
-#  apt-get -y install playonlinux
 apt-get -y install sublime-text-installer
 apt-get -y install google-chrome-stable
 apt-get -y install skype
+apt-get -y install playonlinux
+# apt-get -y install wine1.7 # TODO: check dependences!
+
 #  apt-get -y install sni-qt:i386 # needed to -y install for skype-indicator to work well
 ## TODO: seems like it's no nore needed
 
 # group installed from *.deb
-# gdebi microsoft_online_apps.deb
-# gdebi steam_latest.deb
-# gdebi yandex-disk_latest_amd64.deb
-# gdebi ttf-sazanami-mincho_20040629-15_all.deb
-# gdebi yarxi_1.10-1_amd64.deb
-cd ./deb && dpkg -y -i *.deb && cd ../ # install all *.deb packages
-
-
+# cd /home/nin/source/develop/setup_ubuntu/deb && dpkg -y -i *.deb # install all *.deb packages
 
 ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/libGL.so.1
-# sed -i "s/NoDisplay=true/NoDisplay=false/g" /etc/xdg/autostart/*.desktop
+sed -i "s/NoDisplay=true/NoDisplay=false/g" /etc/xdg/autostart/*.desktop
 # gsettings set org.gnome.gedit.preferences.encodings auto-detected "['UTF-8', 'WINDOWS-1251', 'CURRENT', 'ISO-8859-15', 'UTF-16']"
 
-echo "Wil now reboot..."
-sleep 1
-reboot
+apt-add-repository -y ppa:webupd8team/java &&  apt-get update # add repository for oracle java 8
+apt-get -y install oracle-java8-installer ## -y install oracle-java-8
+apt-get -y install open-jdk-jre
+apt-get -y install ubuntu-restricted-extras
+wget http://web.cadsoft.de/ftp/eagle/program/7.4/eagle-lin64-7.4.0.run # downloaing eagle

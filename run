@@ -1,16 +1,16 @@
 #!/bin/bash
 
-## Author AVS 31 Aug 2015
+# Author AVS 31 Aug 2015
 
 
-## cd ~/source/setup_ubuntu/
-chmod + rx setup
 
-if [ $whoami = "root" ]
+
+if [ "$(whoami)" = "root" ]
 then
     echo "Now I'll open main script. Modify it on you own if need"
     sleep 1
     nano setup
+    chmod +rx setup
     ./setup
 else
     echo "Run this under root!"
