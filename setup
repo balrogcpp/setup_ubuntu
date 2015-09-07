@@ -44,6 +44,9 @@ sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt
 
 apt-get -y update &&  apt-get -y dist-upgrade 
 
+## ppa for yandex-disk
+echo "deb http://repo.yandex.ru/yandex-disk/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/yandex.list > /dev/null && wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add -
+
 
 # apt-get -y install bumblebee bumblebee-nvidia virtualgl virtualgl-libs-ia32 primus primus-libs-ia32 nvidia-355 # -y install bumblebee + nvidia-driver
 
@@ -147,7 +150,7 @@ apt-get -y install clang-3.5 clang-3.5-doc libclang-common-3.5-dev libclang-3.5-
 apt-get -y install doxygen
 
 ## group indicator packages
-# apt-get -y install indicator-multiload ## load indicator
+apt-get -y install indicator-multiload ## load indicator
 # apt-get -y install my-weather-indicator ## weather indicator
 
 ## group dev packages
@@ -166,6 +169,7 @@ apt-get -y install sublime-text-installer
 apt-get -y install google-chrome-stable
 apt-get -y install skype
 apt-get -y install playonlinux
+apt-get -y install yandex-disk
 # apt-get -y install wine1.7 # TODO: check dependences!
 
 #  apt-get -y install sni-qt:i386 # needed to -y install for skype-indicator to work well
@@ -183,3 +187,4 @@ apt-get -y install oracle-java8-installer ## -y install oracle-java-8
 apt-get -y install open-jdk-jre
 apt-get -y install ubuntu-restricted-extras
 wget http://web.cadsoft.de/ftp/eagle/program/7.4/eagle-lin64-7.4.0.run # downloaing eagle
+./eagle-lin64-7.4.0.run
