@@ -10,7 +10,7 @@
 dpkg --add-architecture i386 # allow dpkg to -y install 32-bit packages
 
 
-#  add-apt-repository -y ppa:bumblebee/stable ## 
+add-apt-repository -y ppa:bumblebee/stable ## 
 add-apt-repository -y ppa:graphics-drivers/ppa ##  nvidia-driver
 add-apt-repository -y ppa:kxstudio-team/builds ## ??
 add-apt-repository -y ppa:js-reynaud/ppa-kicad ## ppa for kicad
@@ -48,11 +48,11 @@ apt-get -y update &&  apt-get -y dist-upgrade
 echo "deb http://repo.yandex.ru/yandex-disk/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/yandex.list > /dev/null && wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add -
 
 
-# apt-get -y install bumblebee bumblebee-nvidia virtualgl virtualgl-libs-ia32 primus primus-libs-ia32 nvidia-355 # -y install bumblebee + nvidia-driver
+apt-get -y install bumblebee bumblebee-nvidia virtualgl virtualgl-libs virtualgl-libs-ia32 primus primus-libs primus-libs-ia32 nvidia-355 # -y install bumblebee + nvidia-driver
 
-cat /proc/acpi/bbswitch
-tee /proc/acpi/bbswitch <<< ON
-apt-get -y install nvidia-355 nvidia-settings nvidia-prime
+# cat /proc/acpi/bbswitch
+# tee /proc/acpi/bbswitch <<< ON
+# apt-get -y install nvidia-355 nvidia-settings nvidia-prime
 
 ## TODO: Add script to switch intel\nvidia gpu
 ## 
