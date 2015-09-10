@@ -22,13 +22,13 @@ add-apt-repository -y ppa:libreoffice/libreoffice-5-0 ## ppa for libreoffice 5.0
 
 
 ## ppa for llvm
-# wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key|sudo apt-key add -
-# echo deb http://llvm.org/apt/trusty/ llvm-toolchain-trusty-3.6 main | tee /etc/apt/sources.list.d/llvm.list
-# echo deb-src http://llvm.org/apt/trusty/ llvm-toolchain-trusty-3.6 main | tee /etc/apt/sources.list.d/llvm.list
+wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key|sudo apt-key add -
+echo deb http://llvm.org/apt/trusty/ llvm-toolchain-trusty-3.6 main | tee /etc/apt/sources.list.d/llvm.list
+echo deb-src http://llvm.org/apt/trusty/ llvm-toolchain-trusty-3.6 main | tee /etc/apt/sources.list.d/llvm.list
 
 ## ppa for  spotify
-# apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
-# echo deb http://repository.spotify.com stable non-free |  tee /etc/apt/sources.list.d/spotify.list
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
+echo deb http://repository.spotify.com stable non-free |  tee /etc/apt/sources.list.d/spotify.list
 
 ## ppa for dropbox
 apt-key adv --keyserver pgp.mit.edu --recv-keys 5044912E
@@ -144,10 +144,10 @@ apt-get -y install gdb-msp430
 apt-get -y install arduino arduino-core
 
 # -y install packages needed for emacs work/customization
-# apt-get -y install libclang-3.6-dev
+apt-get -y install libclang-3.6-dev
 pip -y install cpplint
-# apt-get -y install clang-3.5 clang-3.5-doc libclang-common-3.5-dev libclang-3.5-dev libclang1-3.5 libclang1-3.5-dbg libllvm-3.5-ocaml-dev libllvm3.5 libllvm3.5-dbg lldb-3.5 llvm-3.5 llvm-3.5-dev llvm-3.5-doc llvm-3.5-examples llvm-3.5-runtime clang-modernize-3.5 clang-format-3.5 python-clang-3.5 lldb-3.5-dev
-# apt-get -y install doxygen
+apt-get -y install clang-3.5 clang-3.5-doc libclang-common-3.5-dev libclang-3.5-dev libclang1-3.5 libclang1-3.5-dbg libllvm-3.5-ocaml-dev libllvm3.5 libllvm3.5-dbg lldb-3.5 llvm-3.5 llvm-3.5-dev llvm-3.5-doc llvm-3.5-examples llvm-3.5-runtime clang-modernize-3.5 clang-format-3.5 python-clang-3.5 lldb-3.5-dev
+apt-get -y install doxygen
 
 ## group indicator packages
 apt-get -y install indicator-multiload ## load indicator
@@ -163,7 +163,7 @@ apt-get -y install libogre-1.9-dev libogre-1.9.0 ogre-1.9-doc libogre-1.9.0-dbg 
 apt-get -y install clamav
 
 ## group 3rd party software
-# apt-get -y install spotify-client
+apt-get -y install spotify-client
 apt-get -y install dropbox
 apt-get -y install sublime-text-installer
 apt-get -y install google-chrome-stable
@@ -187,4 +187,5 @@ apt-get -y install oracle-java8-installer ## -y install oracle-java-8
 apt-get -y install open-jdk-jre
 apt-get -y install ubuntu-restricted-extras
 wget http://web.cadsoft.de/ftp/eagle/program/7.4/eagle-lin64-7.4.0.run # downloaing eagle
+chmode + rx eagle-lin64-7.4.0.run
 ./eagle-lin64-7.4.0.run
