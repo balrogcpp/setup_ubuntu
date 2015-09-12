@@ -9,7 +9,6 @@
 
 dpkg --add-architecture i386 # allow dpkg to -y install 32-bit packages
 
-
 add-apt-repository -y ppa:bumblebee/stable ## 
 add-apt-repository -y ppa:graphics-drivers/ppa ##  nvidia-driver
 add-apt-repository -y ppa:kxstudio-team/builds ## ??
@@ -19,7 +18,6 @@ add-apt-repository -y ppa:webupd8team/sublime-text-3 ## sublime text
 add-apt-repository -y ppa:indicator-multiload/stable-daily ## load indicator
 add-apt-repository -y ppa:atareao/atareao ## weather indicator
 add-apt-repository -y ppa:libreoffice/libreoffice-5-0 ## ppa for libreoffice 5.0
-
 
 ## ppa for llvm
 wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key|sudo apt-key add -
@@ -47,30 +45,22 @@ apt-get -y update &&  apt-get -y dist-upgrade
 ## ppa for yandex-disk
 echo "deb http://repo.yandex.ru/yandex-disk/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/yandex.list > /dev/null && wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add -
 
-
 apt-get -y install bumblebee bumblebee-nvidia virtualgl virtualgl-libs virtualgl-libs-ia32 primus primus-libs primus-libs-ia32 nvidia-355 # -y install bumblebee + nvidia-driver
 
 # cat /proc/acpi/bbswitch
 # tee /proc/acpi/bbswitch <<< ON
 # apt-get -y install nvidia-355 nvidia-settings nvidia-prime
 
-## TODO: Add script to switch intel\nvidia gpu
-## 
-
 apt-get -y install bcmwl-kernel-source    ## -y install driver for wirell module
 
-#  apt-get -y install preload
+# apt-get -y install preload
 # apt-get -y install laptop-mode-tools
 # apt-get -y install powerstat
 
-## group codec media
-apt-get -y install vlc
-
-## group  basic packages
+## group  basic
 apt-get -y install aptitude
 apt-get -y install gdebi
 apt-get -y install git
-apt-get -y install emacs
 apt-get -y install git-all
 apt-get -y install mercurial
 apt-get -y install python-pip
@@ -91,6 +81,7 @@ apt-get -y install dconf-editor
 apt-get -y install mesa-utils
 apt-get -y install mesa-utils-extras
 apt-get -y install mplayer
+apt-get -y install p7zip-rar p7zip-full
 
 ## group font packages
 apt-get -y install ttf-ancient-fonts
@@ -100,36 +91,43 @@ apt-get -y install fonts-dejavu
 apt-get -y install fonts-liberation
 apt-get -y install xfonts-terminus console-terminus
 
+## group multimedia media
+apt-get -y install vlc
+apt-get -y install audacity
+apt-get -y install spotify-client
+
 ## group office software packages
 apt-get -y install stardict
 apt-get -y install fbreader
 apt-get -y install djview
 cdt-get -y install gimp
 apt-get -y install xsane
-apt-get -y install octave
 apt-get -y install qtiplot
 apt-get -y install cuneiform
 apt-get -y install yagf
 apt-get -y install anki
-apt-get -y install libreoffice ## maybe it's easier to do this from *.deb files
-
-## group tweak applications
-## need to add smth
+apt-get -y install libreoffice
 
 ## group science packages
 apt-get -y install octave
 apt-get -y install octave-signal octave-audio octave-image
-apt-get -y install celestia
-apt-get -y install celestia-common-nonfree
+apt-get -y install celestia celestia-common-nonfree
 apt-get -y install stellarium
+
+## group electronics
 apt-get -y install magic
 apt-get -y install ngspice
 apt-get -y install verilog
 apt-get -y install gtkwave
-# apt-get -y install kicad
+apt-get -y install kicad
+apt-get -y install gresistor
 
 ## group game packages
 apt-get -y install freeciv-client-gtk
+
+## group graphics
+apt-get -y install gimp
+apt-get -y install blender
 
 ## group embedded software  packages
 ## * msp430
@@ -138,45 +136,37 @@ apt-get -y install gcc-msp430
 apt-get -y install msp430-libc
 apt-get -y install mspdebug
 apt-get -y install gdb-msp430
-# add ti ccs6
-
+apt-get -y install libc6:i386 libx11-6:i386 libasound2:i386 libatk1.0-0:i386 libcairo2:i386 libcups2:i386 libdbus-glib-1-2:i386 libgconf-2-4:i386 libgdk-pixbuf2.0-0:i386 libgtk-3-0:i386 libice6:i386 libncurses5:i386 libsm6:i386 liborbit2:i386 libudev1:i386 libusb-0.1-4:i386 libstdc++6:i386 libxt6:i386 libxtst6:i386 libgnomeui-0:i386 libusb-1.0-0-dev:i386 libcanberra-gtk-module:i386 gtk2-engines-murrine:i386
+ln -s /lib/i386-linux-gnu/libudev.so.1 /lib/libudev.so.0
 ## *arduino
 apt-get -y install arduino arduino-core
 
-# -y install packages needed for emacs work/customization
+## group development
+apt-get -y install emacs
+apt-get -y install kdevelop
+apt-get -y install sublime-text-installer
 apt-get -y install libclang-3.6-dev
 pip -y install cpplint
 apt-get -y install clang-3.5 clang-3.5-doc libclang-common-3.5-dev libclang-3.5-dev libclang1-3.5 libclang1-3.5-dbg libllvm-3.5-ocaml-dev libllvm3.5 libllvm3.5-dbg lldb-3.5 llvm-3.5 llvm-3.5-dev llvm-3.5-doc llvm-3.5-examples llvm-3.5-runtime clang-modernize-3.5 clang-format-3.5 python-clang-3.5 lldb-3.5-dev
 apt-get -y install doxygen
+apt-get -y install vncviewer
+apt-get -y install libsdl2-dev libsdl2-dbg libsdl2-image-dbg libsdl2-image-dev libsdl2-ttf-dev libsdl2-ttf-dbg
+apt-get -y install libopenal-dev libalut-dev
+apt-get -y install libogre-1.9-dev libogre-1.9.0 ogre-1.9-doc libogre-1.9.0-dbg ogre-1.9-tools
+apt-get -y install gnome-devel
 
 ## group indicator packages
 apt-get -y install indicator-multiload ## load indicator
 apt-get -y install my-weather-indicator ## weather indicator
 
-## group dev packages
-apt-get -y install vncviewer
-apt-get -y install libsdl2-dev libsdl2-dbg libsdl2-image-dbg libsdl2-image-dev libsdl2-ttf-dev libsdl2-ttf-dbg
-apt-get -y install libopenal-dev libalut-dev
-apt-get -y install libogre-1.9-dev libogre-1.9.0 ogre-1.9-doc libogre-1.9.0-dbg ogre-1.9-tools
-
 ## group protection
 apt-get -y install clamav
 
-## group 3rd party software
-apt-get -y install spotify-client
-apt-get -y install dropbox
-apt-get -y install sublime-text-installer
+## group internet
 apt-get -y install google-chrome-stable
 apt-get -y install skype
-# apt-get -y install playonlinux
 apt-get -y install yandex-disk
-# apt-get -y install wine1.7
-
-#  apt-get -y install sni-qt:i386 # needed to -y install for skype-indicator to work well
-## TODO: seems like it's no nore needed
-
-# group installed from *.deb
-# cd /home/nin/source/develop/setup_ubuntu/deb && dpkg -y -i *.deb # install all *.deb packages
+apt-get -y install dropbox
 
 ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/libGL.so.1
 sed -i "s/NoDisplay=true/NoDisplay=false/g" /etc/xdg/autostart/*.desktop
@@ -188,4 +178,3 @@ apt-get -y install open-jdk-jre
 apt-get -y install ubuntu-restricted-extras
 wget http://web.cadsoft.de/ftp/eagle/program/7.4/eagle-lin64-7.4.0.run # downloaing eagle
 chmode + rx eagle-lin64-7.4.0.run
-./eagle-lin64-7.4.0.run
