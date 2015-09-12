@@ -1,7 +1,0 @@
-#!/bin/bash
-
-prime-select intel
-prime-select query
-glxinfo | grep OpenGL
-# pkill -u nin
-pkill -u onin
