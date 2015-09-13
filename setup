@@ -53,8 +53,11 @@ apt-get -y install bumblebee bumblebee-nvidia virtualgl virtualgl-libs virtualgl
 
 apt-get -y install bcmwl-kernel-source    ## -y install driver for wirell module
 
+
+## group power
+apt-get -y install powertop
+apt-get -y install laptop-mode-tools
 # apt-get -y install preload
-# apt-get -y install laptop-mode-tools
 # apt-get -y install powerstat
 
 ## group  basic
@@ -75,7 +78,6 @@ apt-get -y install alien
 apt-get -y install lm-sensors
 apt-get -y install vim
 apt-get -y install htop
-apt-get -y install powertop
 apt-get -y install synaptic
 apt-get -y install dconf-editor
 apt-get -y install mesa-utils
