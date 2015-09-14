@@ -59,6 +59,7 @@ apt-get -y install powertop
 apt-get -y install laptop-mode-tools
 # apt-get -y install preload
 # apt-get -y install powerstat
+apt-get -y install smartmontools
 
 ## group  basic
 apt-get -y install aptitude
