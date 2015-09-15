@@ -85,6 +85,7 @@ apt-get -y install mesa-utils
 apt-get -y install mesa-utils-extras
 apt-get -y install mplayer
 apt-get -y install p7zip-rar p7zip-full
+apt-get -y install terminator
 
 ## group font packages
 apt-get -y install ttf-ancient-fonts
@@ -98,6 +99,7 @@ apt-get -y install xfonts-terminus console-terminus
 apt-get -y install vlc
 apt-get -y install audacity
 apt-get -y install spotify-client
+apt-get -y install tomahawk
 
 ## group office software packages
 apt-get -y install stardict
@@ -124,6 +126,7 @@ apt-get -y install verilog
 apt-get -y install gtkwave
 apt-get -y install kicad
 apt-get -y install gresistor
+apt-get -y install fritzing
 
 ## group game packages
 apt-get -y install freeciv-client-gtk
@@ -131,6 +134,9 @@ apt-get -y install freeciv-client-gtk
 ## group graphics
 apt-get -y install gimp
 apt-get -y install blender
+
+## group wine
+#aptitude -y install wine1.7 wine1.7-dev winetricks
 
 ## group embedded software  packages
 ## * msp430
@@ -180,4 +186,4 @@ apt-get -y install oracle-java8-installer ## -y install oracle-java-8
 apt-get -y install open-jdk-jre
 apt-get -y install ubuntu-restricted-extras
 wget http://web.cadsoft.de/ftp/eagle/program/7.4/eagle-lin64-7.4.0.run # downloaing eagle
-chmode + rx eagle-lin64-7.4.0.run
+chmod + rx eagle-lin64-7.4.0.run
