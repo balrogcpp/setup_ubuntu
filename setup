@@ -81,7 +81,7 @@ apt-get -y install vim
 apt-get -y install htop
 apt-get -y install synaptic
 apt-get -y install dconf-editor
-apt-get -y install mesa-utils
+apt-get -y install mesa-utilss
 apt-get -y install mesa-utils-extras
 apt-get -y install mplayer
 apt-get -y install p7zip-rar p7zip-full
@@ -184,6 +184,7 @@ sed -i "s/NoDisplay=true/NoDisplay=false/g" /etc/xdg/autostart/*.desktop
 apt-add-repository -y ppa:webupd8team/java &&  apt-get update # add repository for oracle java 8
 apt-get -y install oracle-java8-installer ## -y install oracle-java-8
 apt-get -y install open-jdk-jre
-apt-get -y install ubuntu-restricted-extras
+# apt-get -y install ubuntu-restricted-extras
+apt-get -y install xubuntu-restricted-extras
 wget http://web.cadsoft.de/ftp/eagle/program/7.4/eagle-lin64-7.4.0.run # downloaing eagle
 chmod + rx eagle-lin64-7.4.0.run
