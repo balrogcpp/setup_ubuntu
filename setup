@@ -13,7 +13,7 @@ add-apt-repository -y ppa:bumblebee/stable ##
 add-apt-repository -y ppa:graphics-drivers/ppa ##  nvidia-driver
 add-apt-repository -y ppa:kxstudio-team/builds ## ??
 add-apt-repository -y ppa:js-reynaud/ppa-kicad ## ppa for kicad
-add-apt-repository -y ppa:ubuntu-wine/ppa ## ppa for wine
+add-apt-repository -ys ppa:ubuntu-wine/ppa ## ppa for wine
 add-apt-repository -y ppa:webupd8team/sublime-text-3 ## sublime text
 add-apt-repository -y ppa:indicator-multiload/stable-daily ## load indicator
 add-apt-repository -y ppa:atareao/atareao ## weather indicator
@@ -60,6 +60,11 @@ apt-get -y install laptop-mode-tools
 # apt-get -y install preload
 # apt-get -y install powerstat
 apt-get -y install smartmontools
+
+##group remove
+aptitude -y purge abiword
+aptitude -y purge gnumeric
+aptitude -y purge gmusicbrowser
 
 ## group  basic
 apt-get -y install aptitude
@@ -163,6 +168,7 @@ apt-get -y install libsdl2-dev libsdl2-dbg libsdl2-image-dbg libsdl2-image-dev l
 apt-get -y install libopenal-dev libalut-dev
 apt-get -y install libogre-1.9-dev libogre-1.9.0 ogre-1.9-doc libogre-1.9.0-dbg ogre-1.9-tools
 apt-get -y install gnome-devel
+apt-get -y install ubuntu-dev-tools
 
 ## group indicator packages
 apt-get -y install indicator-multiload ## load indicator
@@ -187,4 +193,4 @@ apt-get -y install open-jdk-jre
 # apt-get -y install ubuntu-restricted-extras
 apt-get -y install xubuntu-restricted-extras
 wget http://web.cadsoft.de/ftp/eagle/program/7.4/eagle-lin64-7.4.0.run # downloaing eagle
-chmod + rx eagle-lin64-7.4.0.run
+chmod +rx eagle-lin64-7.4.0.run
