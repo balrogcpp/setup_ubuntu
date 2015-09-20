@@ -175,7 +175,7 @@ apt-get -y install indicator-multiload ## load indicator
 apt-get -y install my-weather-indicator ## weather indicator
 
 ## group protection
-apt-get -y install clamav
+# apt-get -y install clamav
 
 ## group internet
 apt-get -y install google-chrome-stable
@@ -189,8 +189,8 @@ sed -i "s/NoDisplay=true/NoDisplay=false/g" /etc/xdg/autostart/*.desktop
 
 apt-add-repository -y ppa:webupd8team/java &&  apt-get update # add repository for oracle java 8
 apt-get -y install oracle-java8-installer ## -y install oracle-java-8
-apt-get -y install open-jdk-jre
+# apt-get -y install open-jdk-jre
 # apt-get -y install ubuntu-restricted-extras
-apt-get -y install xubuntu-restricted-extras
-wget http://web.cadsoft.de/ftp/eagle/program/7.4/eagle-lin64-7.4.0.run # downloaing eagle
-chmod +rx eagle-lin64-7.4.0.run
+# apt-get -y install xubuntu-restricted-extras
+# wget http://web.cadsoft.de/ftp/eagle/program/7.4/eagle-lin64-7.4.0.run # downloaing eagle
+# chmod +rx eagle-lin64-7.4.0.run
