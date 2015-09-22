@@ -10,6 +10,7 @@
 dpkg --add-architecture i386 # allow dpkg to -y install 32-bit packages
 
 add-apt-repository -y ppa:bumblebee/stable ## 
+# add-apt-repository -y ppa:oibaf/graphics-drivers ## intell graphics driver
 add-apt-repository -y ppa:graphics-drivers/ppa ##  nvidia-driver
 add-apt-repository -y ppa:kxstudio-team/builds ## ??
 add-apt-repository -y ppa:js-reynaud/ppa-kicad ## ppa for kicad
@@ -40,157 +41,160 @@ sh -c 'echo "deb http://linux.dropbox.com/ubuntu/ vivid main" >> /etc/apt/source
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub |  apt-key add -
 sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 
-apt-get -y update &&  apt-get -y dist-upgrade 
+aptitude  update &&  aptitude  dist-upgrade 
 
 ## ppa for yandex-disk
 echo "deb http://repo.yandex.ru/yandex-disk/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/yandex.list > /dev/null && wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add -
 
-apt-get -y install bumblebee bumblebee-nvidia virtualgl virtualgl-libs virtualgl-libs-ia32 primus primus-libs primus-libs-ia32 nvidia-355 # -y install bumblebee + nvidia-driver
+aptitude install bumblebee bumblebee-nvidia virtualgl virtualgl-libs virtualgl-libs-ia32 primus primus-libs primus-libs-ia32 nvidia-355 # -y install bumblebee + nvidia-driver
 
 # cat /proc/acpi/bbswitch
 # tee /proc/acpi/bbswitch <<< ON
-# apt-get -y install nvidia-355 nvidia-settings nvidia-prime
+# aptitude  install nvidia-355 nvidia-settings nvidia-prime
 
-apt-get -y install bcmwl-kernel-source    ## -y install driver for wirell module
+aptitude install bcmwl-kernel-source    ## -y install driver for wirell module
 
 
 ## group power
-apt-get -y install powertop
-apt-get -y install laptop-mode-tools
-# apt-get -y install preload
-# apt-get -y install powerstat
-apt-get -y install smartmontools
+aptitude install powertop
+aptitude install laptop-mode-tools
+aptitude install smartmontools
+# aptitude install preload
+# aptitude install powerstat
+
 
 ##group remove
-aptitude -y purge abiword
-aptitude -y purge gnumeric
-aptitude -y purge gmusicbrowser
+aptitude purge abiword
+aptitude purge gnumeric
+aptitude purge gmusicbrowser
 
 ## group  basic
-apt-get -y install aptitude
-apt-get -y install gdebi
-apt-get -y install git
-apt-get -y install git-all
-apt-get -y install mercurial
-apt-get -y install python-pip
-apt-get -y install curl
-apt-get -y install cmake
-apt-get -y install m4
-apt-get -y install checkinstall
-apt-get -y install mc
-apt-get -y install tcsh
-apt-get -y install apcalc
-apt-get -y install alien
-apt-get -y install lm-sensors
-apt-get -y install vim
-apt-get -y install htop
-apt-get -y install synaptic
-apt-get -y install dconf-editor
-apt-get -y install mesa-utilss
-apt-get -y install mesa-utils-extras
-apt-get -y install mplayer
-apt-get -y install p7zip-rar p7zip-full
-apt-get -y install terminator
+aptitude install aptitude
+aptitude install gdebi
+aptitude install git
+aptitude install git-all
+aptitude install mercurial
+aptitude install python-pip
+aptitude install curl
+aptitude install cmake
+aptitude install m4
+aptitude install checkinstall
+aptitude install mc
+aptitude install tcsh
+aptitude install apcalc
+aptitude install alien
+aptitude install lm-sensors
+aptitude install vim
+aptitude install htop
+aptitude install synaptic
+aptitude install dconf-editor
+aptitude install mesa-utilss
+aptitude install mesa-utils-extras
+aptitude install mplayer
+aptitude install p7zip-rar p7zip-full
+aptitude install terminator
 
 ## group font packages
-apt-get -y install ttf-ancient-fonts
-apt-get -y install fonts-inconsolata
-apt-get -y install fonts-droid
-apt-get -y install fonts-dejavu
-apt-get -y install fonts-liberation
-apt-get -y install xfonts-terminus console-terminus
+aptitude install ttf-ancient-fonts
+aptitude install fonts-inconsolata
+aptitude install fonts-droid
+aptitude install fonts-dejavu
+aptitude install fonts-liberation
+aptitude install xfonts-terminus console-terminus
 
 ## group multimedia media
-apt-get -y install vlc
-apt-get -y install audacity
-apt-get -y install spotify-client
-apt-get -y install tomahawk
+aptitude install vlc
+aptitude install audacity
+aptitude install spotify-client
+aptitude install tomahawk
 
 ## group office software packages
-apt-get -y install stardict
-apt-get -y install fbreader
-apt-get -y install djview
-cdt-get -y install gimp
-apt-get -y install xsane
-apt-get -y install qtiplot
-apt-get -y install cuneiform
-apt-get -y install yagf
-apt-get -y install anki
-apt-get -y install libreoffice
+aptitude install stardict
+aptitude install fbreader
+aptitude install djview
+aptitude install gimp
+aptitude install xsane
+aptitude install qtiplot
+aptitude install cuneiform
+aptitude install yagf
+aptitude install anki
+aptitude install libreoffice
 
 ## group science packages
-apt-get -y install octave
-apt-get -y install octave-signal octave-audio octave-image
-apt-get -y install celestia celestia-common-nonfree
-apt-get -y install stellarium
+aptitude install octave
+aptitude install octave-signal octave-audio octave-image
+aptitude install celestia celestia-common-nonfree
+aptitude install stellarium
 
 ## group electronics
-apt-get -y install magic
-apt-get -y install ngspice
-apt-get -y install verilog
-apt-get -y install gtkwave
-apt-get -y install kicad
-apt-get -y install gresistor
-apt-get -y install fritzing
+aptitude install magic
+aptitude install ngspice
+aptitude install verilog
+aptitude install gtkwave
+aptitude install kicad
+aptitude install gresistor
+aptitude install fritzing
 
 ## group game packages
-apt-get -y install freeciv-client-gtk
+aptitude install freeciv-client-gtk
 
 ## group graphics
-apt-get -y install gimp
-apt-get -y install blender
+aptitude install gimp
+aptitude install blender
 
 ## group wine
 #aptitude -y install wine1.7 wine1.7-dev winetricks
 
 ## group embedded software  packages
 ## * msp430
-apt-get -y install binutils-msp430
-apt-get -y install gcc-msp430
-apt-get -y install msp430-libc
-apt-get -y install mspdebug
-apt-get -y install gdb-msp430
-apt-get -y install libc6:i386 libx11-6:i386 libasound2:i386 libatk1.0-0:i386 libcairo2:i386 libcups2:i386 libdbus-glib-1-2:i386 libgconf-2-4:i386 libgdk-pixbuf2.0-0:i386 libgtk-3-0:i386 libice6:i386 libncurses5:i386 libsm6:i386 liborbit2:i386 libudev1:i386 libusb-0.1-4:i386 libstdc++6:i386 libxt6:i386 libxtst6:i386 libgnomeui-0:i386 libusb-1.0-0-dev:i386 libcanberra-gtk-module:i386 gtk2-engines-murrine:i386
+aptitude install binutils-msp430
+aptitude install gcc-msp430
+aptitude install msp430-libc
+aptitude install mspdebug
+aptitude install gdb-msp430
+aptitude install libc6:i386 libx11-6:i386 libasound2:i386 libatk1.0-0:i386 libcairo2:i386 libcups2:i386 libdbus-glib-1-2:i386 libgconf-2-4:i386 libgdk-pixbuf2.0-0:i386 libgtk-3-0:i386 libice6:i386 libncurses5:i386 libsm6:i386 liborbit2:i386 libudev1:i386 libusb-0.1-4:i386 libstdc++6:i386 libxt6:i386 libxtst6:i386 libgnomeui-0:i386 libusb-1.0-0-dev:i386 libcanberra-gtk-module:i386 gtk2-engines-murrine:i386
 ln -s /lib/i386-linux-gnu/libudev.so.1 /lib/libudev.so.0
-## *arduino
-apt-get -y install arduino arduino-core
+aptitude install arduino arduino-core
 
 ## group development
-apt-get -y install emacs
-apt-get -y install kdevelop
-apt-get -y install sublime-text-installer
-apt-get -y install libclang-3.6-dev
+aptitude install emacs
+aptitude install kdevelop
+aptitude install geany
+aptitude install mono-devel
+aptitude install kate
+aptitude install sublime-text-installer
+aptitude install libclang-3.6-dev
 pip -y install cpplint
-apt-get -y install clang-3.5 clang-3.5-doc libclang-common-3.5-dev libclang-3.5-dev libclang1-3.5 libclang1-3.5-dbg libllvm-3.5-ocaml-dev libllvm3.5 libllvm3.5-dbg lldb-3.5 llvm-3.5 llvm-3.5-dev llvm-3.5-doc llvm-3.5-examples llvm-3.5-runtime clang-modernize-3.5 clang-format-3.5 python-clang-3.5 lldb-3.5-dev
-apt-get -y install doxygen
-apt-get -y install vncviewer
-apt-get -y install libsdl2-dev libsdl2-dbg libsdl2-image-dbg libsdl2-image-dev libsdl2-ttf-dev libsdl2-ttf-dbg
-apt-get -y install libopenal-dev libalut-dev
-apt-get -y install libogre-1.9-dev libogre-1.9.0 ogre-1.9-doc libogre-1.9.0-dbg ogre-1.9-tools
-apt-get -y install gnome-devel
-apt-get -y install ubuntu-dev-tools
+aptitude install clang-3.5 clang-3.5-doc libclang-common-3.5-dev libclang-3.5-dev libclang1-3.5 libclang1-3.5-dbg libllvm-3.5-ocaml-dev libllvm3.5 libllvm3.5-dbg lldb-3.5 llvm-3.5 llvm-3.5-dev llvm-3.5-doc llvm-3.5-examples llvm-3.5-runtime clang-modernize-3.5 clang-format-3.5 python-clang-3.5 lldb-3.5-dev
+aptitude install doxygen
+aptitude install vncviewer
+aptitude install libsdl2-dev libsdl2-dbg libsdl2-image-dbg libsdl2-image-dev libsdl2-ttf-dev libsdl2-ttf-dbg
+aptitude install libopenal-dev libalut-dev
+aptitude install libogre-1.9-dev libogre-1.9.0 ogre-1.9-doc libogre-1.9.0-dbg ogre-1.9-tools
+aptitude install gnome-devel
+aptitude install ubuntu-dev-tools
 
 ## group indicator packages
-apt-get -y install indicator-multiload ## load indicator
-apt-get -y install my-weather-indicator ## weather indicator
+aptitude install indicator-multiload ## load indicator
+aptitude install my-weather-indicator ## weather indicator
 
 ## group protection
-# apt-get -y install clamav
+# aptitude install clamav
 
 ## group internet
-apt-get -y install google-chrome-stable
-apt-get -y install skype
-apt-get -y install yandex-disk
-apt-get -y install dropbox
+aptitude install google-chrome-stable
+aptitude install skype
+aptitude install yandex-disk
+aptitude install dropbox
 
 ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/libGL.so.1
 sed -i "s/NoDisplay=true/NoDisplay=false/g" /etc/xdg/autostart/*.desktop
 # gsettings set org.gnome.gedit.preferences.encodings auto-detected "['UTF-8', 'WINDOWS-1251', 'CURRENT', 'ISO-8859-15', 'UTF-16']"
 
 apt-add-repository -y ppa:webupd8team/java &&  apt-get update # add repository for oracle java 8
-apt-get -y install oracle-java8-installer ## -y install oracle-java-8
-# apt-get -y install open-jdk-jre
-# apt-get -y install ubuntu-restricted-extras
-# apt-get -y install xubuntu-restricted-extras
+aptitude  install oracle-java8-installer ## -y install oracle-java-8
+# aptitude install open-jdk-jre
+# aptitude install ubuntu-restricted-extras
+# aptitude install xubuntu-restricted-extras
 # wget http://web.cadsoft.de/ftp/eagle/program/7.4/eagle-lin64-7.4.0.run # downloaing eagle
 # chmod +rx eagle-lin64-7.4.0.run
