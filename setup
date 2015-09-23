@@ -132,6 +132,7 @@ aptitude install ngspice
 aptitude install verilog
 aptitude install gtkwave
 aptitude install kicad
+aptitude install eagle:i386
 aptitude install gresistor
 aptitude install fritzing
 
@@ -161,6 +162,7 @@ aptitude install emacs
 aptitude install kdevelop
 aptitude install geany
 aptitude install mono-devel
+aptitude install monodevelop
 aptitude install kate
 aptitude install sublime-text-installer
 aptitude install libclang-3.6-dev
