@@ -81,6 +81,7 @@ aptitude install m4
 aptitude install checkinstall
 aptitude install mc
 aptitude install tcsh
+aptitude install tree
 aptitude install apcalc
 aptitude install alien
 aptitude install lm-sensors
@@ -144,7 +145,7 @@ aptitude install gimp
 aptitude install blender
 
 ## group wine
-#aptitude -y install wine1.7 wine1.7-dev winetricks
+aptitude install wine1.7 wine1.7-dev winetricks
 
 ## group embedded software  packages
 ## * msp430
@@ -181,7 +182,7 @@ aptitude install indicator-multiload ## load indicator
 aptitude install my-weather-indicator ## weather indicator
 
 ## group protection
-# aptitude install clamav
+aptitude install clamav
 
 ## group internet
 aptitude install google-chrome-stable
