@@ -12,7 +12,7 @@ dpkg --add-architecture i386 # allow dpkg to -y install 32-bit packages
 add-apt-repository -y ppa:bumblebee/stable ## 
 # add-apt-repository -y ppa:oibaf/graphics-drivers ## intell graphics driver
 add-apt-repository -y ppa:graphics-drivers/ppa ##  nvidia-driver
-add-apt-repository -y ppa:kxstudio-team/builds ## ??
+# add-apt-repository -y ppa:kxstudio-team/builds ## ??
 add-apt-repository -y ppa:js-reynaud/ppa-kicad ## ppa for kicad
 add-apt-repository -ys ppa:ubuntu-wine/ppa ## ppa for wine
 add-apt-repository -y ppa:webupd8team/sublime-text-3 ## sublime text
