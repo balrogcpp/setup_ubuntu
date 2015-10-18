@@ -1,18 +1,18 @@
 ## group science packages
-# aptitude install octave
-# aptitude install octave-signal octave-audio octave-image
-# aptitude install celestia celestia-common-nonfree
-# aptitude install stellarium
+aptitude install octave
+aptitude install octave-signal octave-audio octave-image
+aptitude install celestia celestia-common-nonfree
+aptitude install stellarium
 
 ## group electronics
-# aptitude install magic
-# aptitude install ngspice
-# aptitude install verilog
-# aptitude install gtkwave
-# aptitude install kicad
-# aptitude install eagle:i386
-# aptitude install gresistor
-# aptitude install fritzing
+aptitude install magic
+aptitude install ngspice
+aptitude install verilog
+aptitude install gtkwave
+aptitude install kicad
+aptitude install eagle:i386
+aptitude install gresistor
+aptitude install fritzing
 
 ## group embedded software  packages
 ## * msp430
