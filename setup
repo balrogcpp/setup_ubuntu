@@ -71,7 +71,7 @@ aptitude purge gmusicbrowser
 ## group  basic
 aptitude install aptitude
 aptitude install gdebi
-aptitude install git
+# aptitude install git
 aptitude install git-all
 aptitude install mercurial
 aptitude install python-pip
@@ -89,8 +89,8 @@ aptitude install vim
 aptitude install htop
 aptitude install synaptic
 aptitude install dconf-editor
-aptitude install mesa-utilss
-aptitude install mesa-utils-extras
+aptitude install mesa-utils
+# aptitude install mesa-utils-extras
 aptitude install mplayer
 aptitude install p7zip-rar p7zip-full
 aptitude install terminator
@@ -162,7 +162,7 @@ aptitude install arduino arduino-core
 aptitude install emacs
 aptitude install kdevelop
 aptitude install geany
-aptitude install mono-devel
+# aptitude install mono-devel
 aptitude install monodevelop
 aptitude install kate
 aptitude install sublime-text-installer
