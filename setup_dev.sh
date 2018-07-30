@@ -16,6 +16,7 @@ add-apt -y-repository \
 apt-get -y update
 #apt-get -y install docker-ce
 
+apt -y install libsdl2-dev
 apt -y install git-core gitk mercurial cvs subversion git-gui
 apt -y install astyle uncrustify clang-format
 apt -y install doxygen doxygen-gui graphviz
