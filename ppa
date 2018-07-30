@@ -1,0 +1,36 @@
+dpkg --add-architecture i386 # allow dpkg to -y install 32-bit packages
+
+add-apt-repository -y ppa:bumblebee/stable ## 
+# add-apt-repository -y ppa:oibaf/graphics-drivers ## intell graphics driver
+add-apt-repository -y ppa:graphics-drivers/ppa ##  nvidia-driver
+# add-apt-repository -y ppa:kxstudio-team/builds ## ??
+add-apt-repository -y ppa:js-reynaud/ppa-kicad ## ppa for kicad
+add-apt-repository -ys ppa:ubuntu-wine/ppa ## ppa for wine
+add-apt-repository -y ppa:webupd8team/sublime-text-3 ## sublime text
+add-apt-repository -y ppa:indicator-multiload/stable-daily ## load indicator
+add-apt-repository -y ppa:atareao/atareao ## weather indicator
+add-apt-repository -y ppa:libreoffice/libreoffice-5-0 ## ppa for libreoffice 5.0
+
+## ppa for llvm
+wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key|sudo apt-key add -
+echo deb http://llvm.org/apt/trusty/ llvm-toolchain-trusty-3.6 main | tee /etc/apt/sources.list.d/llvm.list
+echo deb-src http://llvm.org/apt/trusty/ llvm-toolchain-trusty-3.6 main | tee /etc/apt/sources.list.d/llvm.list
+
+## ppa for  spotify
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
+echo deb http://repository.spotify.com stable non-free |  tee /etc/apt/sources.list.d/spotify.list
+
+## ppa for dropbox
+apt-key adv --keyserver pgp.mit.edu --recv-keys 5044912E
+sh -c 'echo "deb http://linux.dropbox.com/ubuntu/ vivid main" >> /etc/apt/sources.list.d/dropbox.list'
+
+## ppa for playonlinux
+# apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E0F72778C4676186
+# wget http://deb.playonlinux.com/playonlinux_trusty.list -O /etc/apt/sources.list.d/playonlinux.list
+
+## ppa for google-chrome
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub |  apt-key add -
+sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+
+## ppa for yandex-disk
+echo "deb http://repo.yandex.ru/yandex-disk/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/yandex.list > /dev/null && wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add -

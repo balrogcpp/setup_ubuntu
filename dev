@@ -1,0 +1,45 @@
+## group science packages
+aptitude install octave
+aptitude install octave-signal octave-audio octave-image
+aptitude install celestia celestia-common-nonfree
+aptitude install stellarium
+
+## group electronics
+aptitude install magic
+aptitude install ngspice
+aptitude install verilog
+aptitude install gtkwave
+aptitude install kicad
+aptitude install eagle:i386
+aptitude install gresistor
+aptitude install fritzing
+
+## group embedded software  packages
+## * msp430
+aptitude install binutils-msp430
+aptitude install gcc-msp430
+aptitude install msp430-libc
+aptitude install mspdebug
+aptitude install gdb-msp430
+aptitude install libc6:i386 libx11-6:i386 libasound2:i386 libatk1.0-0:i386 libcairo2:i386 libcups2:i386 libdbus-glib-1-2:i386 libgconf-2-4:i386 libgdk-pixbuf2.0-0:i386 libgtk-3-0:i386 libice6:i386 libncurses5:i386 libsm6:i386 liborbit2:i386 libudev1:i386 libusb-0.1-4:i386 libstdc++6:i386 libxt6:i386 libxtst6:i386 libgnomeui-0:i386 libusb-1.0-0-dev:i386 libcanberra-gtk-module:i386 gtk2-engines-murrine:i386
+ln -s /lib/i386-linux-gnu/libudev.so.1 /lib/libudev.so.0
+aptitude install arduino arduino-core
+
+## group development
+aptitude install emacs
+aptitude install kdevelop
+aptitude install geany
+aptitude install mono-devel
+aptitude install monodevelop
+aptitude install kate
+aptitude install sublime-text-installer
+aptitude install libclang-3.6-dev
+pip -y install cpplint
+aptitude install clang-3.5 clang-3.5-doc libclang-common-3.5-dev libclang-3.5-dev libclang1-3.5 libclang1-3.5-dbg libllvm-3.5-ocaml-dev libllvm3.5 libllvm3.5-dbg lldb-3.5 llvm-3.5 llvm-3.5-dev llvm-3.5-doc llvm-3.5-examples llvm-3.5-runtime clang-modernize-3.5 clang-format-3.5 python-clang-3.5 lldb-3.5-dev
+aptitude install doxygen
+aptitude install vncviewer
+aptitude install libsdl2-dev libsdl2-dbg libsdl2-image-dbg libsdl2-image-dev libsdl2-ttf-dev libsdl2-ttf-dbg
+aptitude install libopenal-dev libalut-dev
+aptitude install libogre-1.9-dev libogre-1.9.0 ogre-1.9-doc libogre-1.9.0-dbg ogre-1.9-tools
+aptitude install gnome-devel
+aptitude install ubuntu-dev-tools
