@@ -11,8 +11,10 @@ apt -y autoremove
 
 apt -y install bumblebee nvidia-390  libcuda1-390 nvidia-libopencl1-390 nvidia-opencl-icd-390 nvidia-settings bumblebee-nvidia primus virtualgl linux-headers-$(uname -r) primus-libs-ia32 virtualgl-libs-ia32
 
-mv /etc/bumblebee/bumblebee.conf /etc/bumblebee/bumblebee.conf.bac  && cp ./bumblebee.conf /etc/bumblebee
-mv /etc/default/grub /etc/default/grub.bac && cp ./grub /etc/default/grub
+cp /etc/bumblebee/bumblebee.conf /etc/bumblebee/bumblebee.conf.bac
+cp ./bumblebee.conf /etc/bumblebee
+cp /etc/default/grub /etc/default/grub.bac
+cp ./grub /etc/default/grub
 update-grub
 
 update-alternatives --set i386-linux-gnu_gl_conf /usr/lib/i386-linux-gnu/mesa/ld.so.conf
