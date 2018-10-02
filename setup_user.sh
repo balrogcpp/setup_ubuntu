@@ -25,6 +25,8 @@ sudo apt-get -y install oracle-java8-installer oracle-java8-set-default
 sudo apt-get -y remove --purge chrome-gnome-shell
 sudo apt-get -y install thunderbird
 sudo apt-get -y install caffeine
+sudo apt-get -y install gnome-tweak-tool gnome-shell-extensions
+sudo apt-get -y install openvpn network-manager-openvpn network-manager-openvpn-gnome
 sudo apt-get -y install aptitude gdebi gparted xterm nedit gcc g++ make emacs mc htop vim at apcalc tree gnuplot unetbootin extlinux lynx wavemon smartmontools
 sudo apt-get -y install checkinstall cutecom minicom powertop at links2 w3m w3m-img luckybackup pavucontrol  geany cpu-checker iotop sysstat procinfo synaptic 
 sudo apt-get -y install alien lm-sensors
