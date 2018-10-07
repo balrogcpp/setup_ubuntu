@@ -11,6 +11,8 @@ g++-7 -v
 
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test -ry
 sudo apt-get update
+sudo apt-get -y upgrade
+sudo apt-get -y dist-upgrade
 
 wget -O - https://sudo apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
 wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
